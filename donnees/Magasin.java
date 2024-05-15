@@ -56,7 +56,7 @@ public class Magasin {
 	}
 	
 	/**
-	 * permet d'acceder � un CD
+	 * permet d'acceder � un CD
 	 * 
 	 * @return le cd a l'indice i ou null si indice est non valide
 	 */
@@ -68,6 +68,48 @@ public class Magasin {
 		return(res);
 	}
 
-	// TODO  ajouter une methode de tri
 
+	// TODO  ajouter une methode de tri
+	public void trierCd() {
+		//créez une liste vide destinée à contenir les éléments triés;
+		Magasin liste = new Magasin();
+
+		while (this.getNombreCds() > 0) {
+			//trouvez dans la liste à trier l'indice du plus petit élément (recherche du minimum);
+			int indicePetit = 0;
+			for (int i=0; i<this.getNombreCds(); i++) {
+				if (this.listeCds.get(indicePetit).comparerCD(this.listeCds.get(i)) < 0) {
+					indicePetit = i;
+				}
+			}
+
+			//insérez cet élément en fin de la nouvelle liste et supprimez le de la liste initiale;
+			liste.ajouteCd(this.listeCds.get(indicePetit));
+			this.listeCds.remove(this.listeCds.get(indicePetit));
+		}
+		//recommencez l'opération jusqu'à avoir tout trié.
+		this.listeCds = liste.listeCds;
+	}
+
+
+	public void trierArtiste(){
+		//créez une liste vide destinée à contenir les éléments triés;
+		Magasin liste = new Magasin();
+
+		while (this.getNombreCds() > 0) {
+			//trouvez dans la liste à trier l'indice du plus petit élément (recherche du minimum);
+			int indicePetit = 0;
+			for (int i=0; i<this.getNombreCds(); i++) {
+				if (this.listeCds.get(indicePetit).comparerArtiste(this.listeCds.get(i)) < 0) {
+					indicePetit = i;
+				}
+			}
+
+			//insérez cet élément en fin de la nouvelle liste et supprimez le de la liste initiale;
+			liste.ajouteCd(this.listeCds.get(indicePetit));
+			this.listeCds.remove(this.listeCds.get(indicePetit));
+		}
+		//recommencez l'opération jusqu'à avoir tout trié.
+		this.listeCds = liste.listeCds;
+	}
 }

@@ -30,11 +30,15 @@ public class MainChargeurMagasin {
 		sc.nextLine();
 		sc.close();
 
-		resultat.trierAriste();
-		System.out.println(resultat);
+		//resultat.trierArtiste();
+		//System.out.println(resultat);
 
-		resultat.trierAlbum();
-		System.out.println(resultat);
+		//resultat.trierAlbum();
+		//System.out.println(resultat);
+		ChargeurMagasin c = new ChargeurMagasin("../musicbrainzSimple");
+		Magasin m = c.chargerMagasin();
+		int taille = m.getNombreCds();
+		System.out.println(taille);
 
 	}
 

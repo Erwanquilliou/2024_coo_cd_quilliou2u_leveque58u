@@ -1,0 +1,10 @@
+On appelle la méthode "chargerMagasin" dans le main.
+Pour ce faire, nous avons besoin d'un objet de type ChargeurMagasin qui nous donnera l'accès au répertoire contenant
+les fichiers XML descriptifs des CDs.
+
+La classe ChargeurMagasin va alors aller chercher les fichiers contenu dans le répertoire passé à la construction.
+Il y aura par la suite un appel à "chargerCD" dans la classe ChargeurCD qui appellera elle-même les méthodes "ajouterPiste"
+et "extrairePiste" de la la classe CD afin de créer les pistes de CD en fonction des noms de fichiers XML.
+
+Enfin, une fois ces CD crées, la classe ChargeurMagasin va appeller la méthode "ajouterCD" de la classe Magasin afin
+d'ajouter au magasin les CDs venant d'être crées.

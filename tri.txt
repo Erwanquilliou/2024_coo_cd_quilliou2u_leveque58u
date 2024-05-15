@@ -1,0 +1,4 @@
+Les méthodes de tri utilisées permette seulement de trier par rapport à un unique type de données
+Cependant il est possible que un Magazin possède plusieurs cd du même artiste, ainsi l'ordre
+de ces cds ne sera pas déterminés de manière concrète. il serait plus juste de mettre en premier
+par exemple celui qui a le plus de piste, ce que ne permet pas nos méthode de tri.
